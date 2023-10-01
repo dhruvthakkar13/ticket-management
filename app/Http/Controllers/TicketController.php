@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Ticket\Ticket;
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use Illuminate\Support\Facades\Gate;
 
 class TicketController extends Controller
 {
@@ -101,6 +102,7 @@ class TicketController extends Controller
 
     public function close(Ticket $ticket)
     {
+        $this->authorize('close', $ticket);
 
         // Update the ticket's status to "Closed"
         if ($ticket->status === 'Pending') {

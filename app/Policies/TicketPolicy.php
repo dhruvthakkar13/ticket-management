@@ -2,7 +2,7 @@
 
 namespace App\Policies;
 
-use App\Models\Ticket;
+use App\Models\Ticket\Ticket;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
@@ -19,6 +19,11 @@ class TicketPolicy
     public function viewAny(User $user)
     {
         //
+    }
+
+    public function close(User $user, Ticket $ticket)
+    {
+        return $user->id === $ticket->user_id;
     }
 
     /**
@@ -41,7 +46,7 @@ class TicketPolicy
      */
     public function create(User $user)
     {
-        //
+        // return $user->isAdmin();
         // return true;
     }
 

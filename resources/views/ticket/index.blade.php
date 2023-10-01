@@ -5,6 +5,8 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
+            <a href="{{ route('tickets.create') }}" class="btn btn-primary">Create Ticket</a>
+
                 <div class="card-header">Ticket List</div>
 
                 <div class="card-body">

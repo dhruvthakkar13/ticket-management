@@ -40,7 +40,9 @@
 
                         <div class="form-group">
                             <button type="submit" class="btn btn-primary">Create Ticket</button>
+                            <a href="{{ route('tickets.index') }}" class="btn btn-primary">View Tickets</a>
                         </div>
+
                     </form>
                 </div>
             </div>
